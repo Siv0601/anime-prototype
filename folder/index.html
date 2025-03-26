@@ -88,11 +88,12 @@
                 alert("No frames to export!");
                 return;
             }
-            fetch('/generate_gif', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({frames})
-            })
+            fetch('https://anime-prototype-4.onrender.com/generate_gif', {  // Use your Render backend URL
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+})
+
             .then(response => response.blob())
             .then(blob => {
                 const url = URL.createObjectURL(blob);
