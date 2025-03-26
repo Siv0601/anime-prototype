@@ -332,13 +332,14 @@
   });
 
   // Send data to server
-  fetch('/save', {
+  fetch('https://anime-prototype-1.onrender.com/save', {  // Change URL to Render's backend
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ images: imagesData })
-  })
+    body: JSON.stringify(data)
+});
+
   .then(response => {
     if (!response.ok) {
       throw new Error("Failed to save animation.");
