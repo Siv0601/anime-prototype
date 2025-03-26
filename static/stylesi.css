@@ -1,0 +1,62 @@
+/* Basic reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Video Background Styling */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Places it behind everything */
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the video covers the entire background */
+    filter: brightness(0.8); /* Optional: Darkens the video for better visibility */
+}
+
+/* Image gallery container */
+.image-gallery {
+    display: flex;
+    gap: 20px; /* Space between images */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Ensures it stays above the video */
+}
+
+/* Individual image container */
+.image-container {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image styling */
+.image-container img {
+    display: block;
+    width: 200px; /* Adjust image width */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.image-container:hover {
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
