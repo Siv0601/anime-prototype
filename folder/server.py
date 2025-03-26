@@ -22,5 +22,5 @@ def generate_gif():
 
     return send_file(gif_path, mimetype='image/gif', as_attachment=True, download_name='animation.gif')
 
-if __name__ == '__main__':
-    app.run(debug=True,port=5001)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10001)
